@@ -2,7 +2,11 @@ package com.example.frzbgolfer.justjava;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.view.menu.ExpandedMenuView;
+import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -24,8 +28,14 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
+        EditText nameEditText = (EditText) findViewById(R.id.name_edit_text);
+        String namePerson = nameEditText.getText().toString();
         int total = calculatePrice(numCoffees, pricePerCup);
-        String priceMessage = createOrderSummary(numCoffees, total);
+        CheckBox whipCreamCheckBox = (CheckBox) findViewById(R.id.whipcream_checkbox);
+        boolean hasWhipCream = whipCreamCheckBox.isChecked();
+        CheckBox chocCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
+        boolean hasChocolate = chocCheckBox.isChecked();
+        String priceMessage = createOrderSummary(namePerson, numCoffees, hasWhipCream, hasChocolate, total);
         displayMessage(priceMessage);
     }
 
@@ -43,9 +53,16 @@ public class MainActivity extends AppCompatActivity {
      * This method creates and returns a summary message
      * @param quantity is number of items ordered.
      * @param total is order total due
+     * @param hasWhipCream indicates if a whipped cream topping is added
+     * @param hasChoc indicates if chocolate topping is added
      */
-    private String createOrderSummary(int quantity, int total){
-        String summary = "Name: Courtney Biel \nQuantity: " + quantity + "\nTotal: " + total + "\nThank you!";
+    private String createOrderSummary(String name, int quantity, boolean hasWhipCream, boolean hasChoc, int total){
+        String summary =    "Name: " + name +  "\n" +
+                            "Add whipped cream? " + hasWhipCream + "\n" +
+                            "Add chocolate? " + hasChoc + "\n" +
+                            "Quantity: " + quantity + "\n" +
+                            "Total: " + total + "\n" +
+                            "Thank you!";
         return summary;
     }
 
