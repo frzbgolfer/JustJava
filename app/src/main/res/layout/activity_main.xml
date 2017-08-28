@@ -16,14 +16,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:hint="Name"
+            android:hint="@string/name"
             android:id="@+id/name_edit_text"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="Toppings"
+            android:text="@string/toppings"
             android:textAllCaps="true"/>
 
         <LinearLayout
@@ -40,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
-                android:text="Whipped Cream"/>
+                android:text="@string/whipped_cream"/>
 
         </LinearLayout>
 
@@ -58,7 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
-                android:text="Chocolate"/>
+                android:text="@string/chocolate"/>
 
         </LinearLayout>
 
@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Quantity"
+            android:text="@string/quantity"
             android:textAllCaps="true" />
 
         <LinearLayout
@@ -99,28 +99,28 @@
 
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="ORDER SUMMARY"
-            android:textAllCaps="true"/>
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:text="ORDER SUMMARY"-->
+            <!--android:textAllCaps="true"/>-->
 
-        <TextView
-            android:id="@+id/order_summary_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="$0"
-            android:textColor="@android:color/black"
-            android:textSize="16sp"/>
+        <!--<TextView-->
+            <!--android:id="@+id/order_summary_text_view"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:text="$0"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:textSize="16sp"/>-->
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:onClick="submitOrder"
-            android:text="Order"/>
+            android:text="@string/order"/>
 
     </LinearLayout>
 </ScrollView>
